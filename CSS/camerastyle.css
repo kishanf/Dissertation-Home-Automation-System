@@ -1,5 +1,4 @@
 
-
 body
 {
     background-color: #A90049;
@@ -169,4 +168,10 @@ section{
 }
 
 /*    toggle */
+
+h1 {
+    padding: 40px 50px 10px 50px
+}
+
+
 

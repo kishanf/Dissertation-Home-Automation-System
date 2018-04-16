@@ -16,7 +16,7 @@ session_start();
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="CSS/camerastyle.css">
+  <link rel="stylesheet" type="text/css" href="CSS/panelstyle.css">
   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
 
@@ -48,8 +48,8 @@ session_start();
 		<div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
 			<ul class="nav navbar-nav">
 				<li ><a href="panel.php">Door<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
-				<li class="active"><a href="camera.php">Webcam<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-eye-open"></span></a></li>
-				<li ><a href="lights.php">Lights<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-off"></span></a></li>
+				<li ><a href="camera.php">Webcam<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-eye-open"></span></a></li>
+				<li class="active"><a href="lights.php">Lights<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-off"></span></a></li>
         
         <li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cog"></span></a>
@@ -70,25 +70,29 @@ session_start();
 	</div>
 </nav>
 
-<body>
+<?php
+if (isset($_POST['LOCK']))
+{
+exec("sudo python /var/www/html/GPIO/stepperControl.py");
+}
+if (isset($_POST['UNLOCK']))
+{
+exec("sudo python /var/www/html/GPIO/stepperControl1.py");
+}
+
+?>
+
 <div class="main">
 
 <!-- Content Here -->
 
 
-<center><h1>RaspberryPi - Home Surveillance Camera</h1></center>
-<center><img src="stream.mjpg" width="640" height="480"></center>
-
-
-
-
-<form action="http://192.168.0.80:8081">
-		<center><input type="submit" value="View Live Stream!" /></center>	
+<div align="center">
+<form method="post">
+<h3>LED 1:</h3> <button id="search" class="btn" name="LOCK"><h3>LOCK</h3></button>&nbsp;
+<button id="search" class="btn" name="UNLOCK"><h3>UNLOCK</h3></button><br>
+<h3>Connect led to Pin No: 3/ GPIO 02</h3>
 </form>
-<form action="http://192.168.0.80:8080">
-		<center><input type="submit" value="Camera Settings" /></center>		
-</form>
-
 
 
 </div>
@@ -128,9 +132,5 @@ session_start();
   			htmlbodyHeightUpdate()
 		});
 	});
-	</script>
-	
+  </script>
 
-
-
-</body>
