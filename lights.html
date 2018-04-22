@@ -17,6 +17,8 @@ session_start();
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
   <link rel="stylesheet" type="text/css" href="CSS/panelstyle.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+
   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
 
@@ -33,51 +35,60 @@ session_start();
 </nav>
 <!------ Include the above in your HEAD tag ---------->
 <nav class="navbar navbar-inverse sidebar" role="navigation">
-    <div class="container-fluid">
-		<!-- Brand and toggle get grouped for better mobile display -->
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="#">NEON</a>
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">NEON</a>
+			</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+						<li ><a href="home.php">Home<span style="font-size:16px;" class="fa-pull-right hidden-xs showopacity fas fa-home"></span></a></li>
+					<li ><a href="panel.php">Door<span style="font-size:16px;" class="fa-pull-right hidden-xs showopacity fas fa-lock"></span></a></li>
+					<li ><a href="camera.php">Webcam<span style="font-size:16px;" class="fa-pull-right hidden-xs showopacity fas fa-eye"></span></a></li>
+					<li class="active"><a href="lights.php">Lights<span style="font-size:16px;" class="fa-pull-right hidden-xs showopacity fas fa-lightbulb"></span></a></li>
+			
+			<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <span class="caret"></span><span style="font-size:16px;" class="fa-pull-right hidden-xs showopacity fas fa-cog"></span></a>
+						<ul class="dropdown-menu forAnimate" role="menu">
+							<li><a href="#">Action</a></li>
+							<li><a href="#">Another action</a></li>
+							<li><a href="#">Something else here</a></li>
+							<li class="divider"></li>
+							<li><a href="#">Separated link</a></li>
+							<li class="divider"></li>
+							<li><a href="#">One more separated link</a></li>
+						</ul>
+			</li>
+			
+	
+				</ul>
+			</div>
 		</div>
-		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
-			<ul class="nav navbar-nav">
-				<li ><a href="panel.php">Door<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
-				<li ><a href="camera.php">Webcam<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-eye-open"></span></a></li>
-				<li class="active"><a href="lights.php">Lights<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-off"></span></a></li>
-        
-        <li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cog"></span></a>
-					<ul class="dropdown-menu forAnimate" role="menu">
-						<li><a href="#">Action</a></li>
-						<li><a href="#">Another action</a></li>
-						<li><a href="#">Something else here</a></li>
-						<li class="divider"></li>
-						<li><a href="#">Separated link</a></li>
-						<li class="divider"></li>
-						<li><a href="#">One more separated link</a></li>
-					</ul>
-        </li>
-        
-
-			</ul>
-		</div>
-	</div>
-</nav>
+	</nav>
 
 <?php
-if (isset($_POST['LOCK']))
+if (isset($_POST['RED']))
 {
-exec("sudo python /var/www/html/GPIO/stepperControl.py");
+exec("sudo python /var/www/html/GPIO/red.py");
 }
-if (isset($_POST['UNLOCK']))
+if (isset($_POST['BLUE']))
 {
-exec("sudo python /var/www/html/GPIO/stepperControl1.py");
+exec("sudo python /var/www/html/GPIO/blue.py");
+}
+if (isset($_POST['GREEN']))
+{
+exec("sudo python /var/www/html/GPIO/green.py");
+}
+if (isset($_POST['OFF']))
+{
+exec("sudo python /var/www/html/GPIO/ledOFF.py");
 }
 
 ?>
@@ -89,10 +100,18 @@ exec("sudo python /var/www/html/GPIO/stepperControl1.py");
 
 <div align="center">
 <form method="post">
-<h3>LED 1:</h3> <button id="search" class="btn" name="LOCK"><h3>LOCK</h3></button>&nbsp;
-<button id="search" class="btn" name="UNLOCK"><h3>UNLOCK</h3></button><br>
-<h3>Connect led to Pin No: 3/ GPIO 02</h3>
+<h3>RGB LED STRIP</h3> <button id="search" class="btn" name="RED"><h3>RED</h3></button>&nbsp;
+<h3></h3> <button id="search" class="btn" name="BLUE"><h3>BLUE</h3></button>&nbsp;
+<h3></h3> <button id="search" class="btn" name="GREEN"><h3>GREEN</h3></button>&nbsp;
+<h3></h3> <button id="search" class="btn" name="GREEN"><h3>OFF</h3></button>
+
+<h3>RED / GPIO 19 <br /> GREEN / GPIO 21 <br /> BLUE / GPIO 13 </h3>
+
+
+
+
 </form>
+
 
 
 </div>

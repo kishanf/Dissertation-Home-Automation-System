@@ -8,7 +8,9 @@ body
 }
 
 h1 {
-    padding: 40px 50px 10px 50px
+    text-align: center;
+
+    
 }
 
 
@@ -20,6 +22,8 @@ h1 {
 .container-1 {
     width: 1000px;
 }
+
+
 
 
 /* remove outer padding */
@@ -43,7 +47,9 @@ nav.sidebar, .main{
 
 /* Add gap to nav and right windows.*/
 .main{
-    padding: 10px 10px 0 10px;
+    padding: 100px 10px 0 250px ;
+    align-items: center;
+
 }
 
 /* .....NavBar: Icon only with coloring/layout.....*/
@@ -174,3 +180,23 @@ section{
 
 
 
+
+/* Style buttons */
+.btn {
+    background-color: DodgerBlue; /* Blue background */
+    border-radius: 12px;
+    color: white; /* White text */
+    padding: 12px 16px; /* Some padding */
+    font-size: 16px; /* Set a font size */
+    cursor: pointer; /* Mouse pointer on hover */
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+
+    
+
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0), 0 17px 50px 0 rgba(0,0,0,0.0);
+}
