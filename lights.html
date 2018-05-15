@@ -90,7 +90,10 @@ if (isset($_POST['OFF']))
 {
 exec("sudo python /var/www/html/GPIO/ledOFF.py");
 }
-
+if (isset($_POST['PURPLE']))
+{
+exec("sudo python /var/www/html/GPIO/purp.py");
+}
 ?>
 
 <div class="main">
@@ -103,7 +106,8 @@ exec("sudo python /var/www/html/GPIO/ledOFF.py");
 <h3>RGB LED STRIP</h3> <button id="search" class="btn" name="RED"><h3>RED</h3></button>&nbsp;
 <h3></h3> <button id="search" class="btn" name="BLUE"><h3>BLUE</h3></button>&nbsp;
 <h3></h3> <button id="search" class="btn" name="GREEN"><h3>GREEN</h3></button>&nbsp;
-<h3></h3> <button id="search" class="btn" name="GREEN"><h3>OFF</h3></button>
+<h3></h3> <button id="search" class="btn" name="PURPLE"><h3>PURPLE</h3></button>&nbsp;
+<h3></h3> <button id="search" class="btn" name="OFF"><h3>OFF</h3></button>
 
 <h3>RED / GPIO 19 <br /> GREEN / GPIO 21 <br /> BLUE / GPIO 13 </h3>
 
