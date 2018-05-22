@@ -8,35 +8,38 @@ session_start();
 <html lang="en">
 
 <head>
-  <title>Welcome</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="CSS/home.css">
-
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+	<title>Welcome</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="CSS/home.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+"
+	 crossorigin="anonymous"></script>
 
 </head>
 
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-    </div>
-    <ul class="nav navbar-nav navbar-right">
-     <!--  <li><a href="signup.php"> <span class="glyphicon glyphicon-user"></span> Sign Up</a></li> -->
-      <li><a href="index.php"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
-    </ul>
-  </div>
+	<div class="container-fluid">
+		<div class="navbar-header">
+		</div>
+		<ul class="nav navbar-nav navbar-right">
+			<!--  <li><a href="signup.php"> <span class="glyphicon glyphicon-user"></span> Sign Up</a></li> -->
+			<li>
+				<a href="index.php">
+					<span class="glyphicon glyphicon-log-out"></span> Log Out</a>
+			</li>
+		</ul>
+	</div>
 </nav>
 <!------ Include the above in your HEAD tag ---------->
 <nav class="navbar navbar-inverse sidebar" role="navigation">
-    <div class="container-fluid">
+	<div class="container-fluid">
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
@@ -45,31 +48,37 @@ session_start();
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">NEON</a>
+			<a class="navbar-brand" href="#">DEVICE LIST</a>
 		</div>
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-                    <li class="active"><a href="home.php">Home<span style="font-size:16px;" class="fa-pull-right hidden-xs showopacity fas fa-home"></span></a></li>
-				<li ><a href="panel.php">Door<span style="font-size:16px;" class="fa-pull-right hidden-xs showopacity fas fa-lock"></span></a></li>
-				<li ><a href="camera.php">Webcam<span style="font-size:16px;" class="fa-pull-right hidden-xs showopacity fas fa-eye"></span></a></li>
-				<li ><a href="lights.php">Lights<span style="font-size:16px;" class="fa-pull-right hidden-xs showopacity fas fa-lightbulb "></span></a></li>
-        
-        <li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <span class="caret"></span><span style="font-size:16px;" class="fa-pull-right hidden-xs showopacity fas fa-cog"></span></a>
-					<ul class="dropdown-menu forAnimate" role="menu">
-						<li><a href="#">Action</a></li>
-						<li><a href="#">Another action</a></li>
-						<li><a href="#">Something else here</a></li>
-						<li class="divider"></li>
-						<li><a href="#">Separated link</a></li>
-						<li class="divider"></li>
-						<li><a href="#">One more separated link</a></li>
-					</ul>
-        </li>
-        
+				<li class="active">
+					<a href="home.php">Home
+						<span style="font-size:16px;" class="fa-pull-right hidden-xs showopacity fas fa-home"></span>
+					</a>
+				</li>
+				<li>
+					<a href="panel.php">Door
+						<span style="font-size:16px;" class="fa-pull-right hidden-xs showopacity fas fa-lock"></span>
+					</a>
+				</li>
+				<li>
+					<a href="camera.php">Webcam
+						<span style="font-size:16px;" class="fa-pull-right hidden-xs showopacity fas fa-eye"></span>
+					</a>
+				</li>
+				<li>
+					<a href="lights.php">Lights
+						<span style="font-size:16px;" class="fa-pull-right hidden-xs showopacity fas fa-lightbulb "></span>
+					</a>
+				</li>
+				<li>
+					<a href="#">Settings
+						<span style="font-size:16px;" class="fa-pull-right hidden-xs showopacity fas fa-cog"></span>
+					</a>
+				</li>
 
-			</ul>
 		</div>
 	</div>
 </nav>
@@ -78,22 +87,25 @@ session_start();
 
 <div class="main">
 
-<!-- Content Here -->
+	<!-- Content Here -->
 
 
-<h1>WELCOME</h1>
-<div align="center">
-<button type="submit" class="btn"><i class="fa fa-lock fa-3x"></i> DOOR LOCK </button>
-<button class="btn"><i class="fa fa-video fa-3x"></i> WEBCAM</button>
-<button class="btn"><i class="fa fa-lightbulb fa-3x"></i> LIGHTS</button><br />
-<br />
-<button class="btn"><i class="fa fa-cog fa-3x fa-spin fa-pulse"></i> SETTINGS</button>
-<button class="btn"><i class="fa fa-sign-out-alt fa-3x"></i> LOG OUT</button>
+	<h1>WELCOME</h1>
+	<div align="center">
+		<button type="submit" onclick="location.href='panel.php';" name="submit" class="btn">
+			<i class="fa fa-lock fa-3x"></i> DOOR LOCK </button>
+		<button type="submit" onclick="location.href='camera.php';" name="submit" class="btn">
+			<i class="fa fa-video fa-3x"></i> WEBCAM</button>
+		<button type="submit" onclick="location.href='lights.php';" name="submit" class="btn">
+			<i class="fa fa-lightbulb fa-3x"></i> LIGHTS</button>
+		<br />
+		<br />
+		<button type="submit" onclick="location.href='home.php';" name="submit" class="btn">
+			<i class="fa fa-cog fa-3x fa-spin fa-pulse"></i> SETTINGS</button>
+		<button type="submit" onclick="location.href='index.php';" name="submit" class="btn">
+			<i class="fa fa-sign-out-alt fa-3x"></i> LOG OUT</button>
 
-
-
-
-    </div>
+	</div>
 
 
 
@@ -113,30 +125,32 @@ session_start();
 
 
 <script>
-  function htmlbodyHeightUpdate(){
-		var height3 = $( window ).height()
-		var height1 = $('.nav').height()+50
+	function htmlbodyHeightUpdate() {
+		var height3 = $(window).height()
+		var height1 = $('.nav').height() + 50
 		height2 = $('.main').height()
-		if(height2 > height3){
-			$('html').height(Math.max(height1,height3,height2)+10);
-			$('body').height(Math.max(height1,height3,height2)+10);
+		if (height2 > height3) {
+			$('html').height(Math.max(height1, height3, height2) + 10);
+			$('body').height(Math.max(height1, height3, height2) + 10);
 		}
-		else
-		{
-			$('html').height(Math.max(height1,height3,height2));
-			$('body').height(Math.max(height1,height3,height2));
+		else {
+			$('html').height(Math.max(height1, height3, height2));
+			$('body').height(Math.max(height1, height3, height2));
 		}
-		
+
 	}
 	$(document).ready(function () {
 		htmlbodyHeightUpdate()
-		$( window ).resize(function() {
+		$(window).resize(function () {
 			htmlbodyHeightUpdate()
 		});
-		$( window ).scroll(function() {
+		$(window).scroll(function () {
 			height2 = $('.main').height()
-  			htmlbodyHeightUpdate()
+			htmlbodyHeightUpdate()
 		});
 	});
-  </script>
+</script>
+
+
+
 

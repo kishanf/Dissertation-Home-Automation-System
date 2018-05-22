@@ -1,0 +1,99 @@
+<?php
+
+session_start();
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>SIGN UP</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="CSS/signup.css">
+</head>
+
+  
+  <nav class="navbar">
+    <div class="container-fluid">
+      <div class="navbar-header">
+      </div>
+        <ul class="nav navbar-nav navbar-right">
+        <!-- <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> -->
+        <li><a href="index.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+<body>
+
+<!--
+ <div class="container">
+     <h2> SIGN UP</h2>
+     <form class="signup-form" action="includes/signup-inc.php" method="POST">
+         <input type="text" name="first" placeholder="Firstname">
+         <input type="text" name="last" placeholder="Lastname">
+         <input type="text" name="email" placeholder="E-mail">
+         <input type="text" name="uid" placeholder="Username">
+         <input type="password" name="password" placeholder="password">
+         <button type="submit" name="submit">Sign Up</button>
+        
+        </form>   
+ </div>
+-->
+
+
+ <script src="https://use.fontawesome.com/1dec14be15.js"></script>
+    <div class="container-fluid stylish-form">
+      <h2 class="text-center"></h2>
+      <div class="row mar20" >
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <div class="inner-section">
+              <form class="signup-form" action="includes/signup-inc.php" method="POST">
+
+              <div class="mar20 inside-form">
+                <h2 class="font_white text-center">SIGN UP</h2>
+            
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-pencil "></i></span>
+                  <input type="text" class="form-control" name="first" placeholder="First Name">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-pencil "></i></span>
+                     <input type="text" class="form-control" name="last" placeholder="Last Name">
+                  </div>
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-envelope "></i></span>
+                  <input type="text" class="form-control" name="email" placeholder="Email">
+                </div>
+
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user "></i></span>
+                    <input type="text" class="form-control" name="uid" placeholder="Username">
+                  </div>
+
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-lock "></i></span>
+                  <input type="password" class="form-control" name="password" placeholder="Password">
+                </div>
+
+                <div class="footer text-center">
+                  <button type="submit" name="submit" class="btn btn-neutral btn-round btn-lg">Get Started</button> 
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <h2 class="text-center font_white"></h2>
+    </div>
+
+
+   

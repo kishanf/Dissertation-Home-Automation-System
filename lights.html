@@ -8,7 +8,7 @@ session_start();
 <html lang="en">
 
 <head>
-  <title>Welcome</title>
+  <title>L.E.D Lights</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -16,7 +16,7 @@ session_start();
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="CSS/panelstyle.css">
+  <link rel="stylesheet" type="text/css" href="CSS/lights.css">
   <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
 
   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -44,7 +44,7 @@ session_start();
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">NEON</a>
+				<a class="navbar-brand" href="#">DEVICE LIST</a>
 			</div>
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
@@ -55,20 +55,7 @@ session_start();
 					<li class="active"><a href="lights.php">Lights<span style="font-size:16px;" class="fa-pull-right hidden-xs showopacity fas fa-lightbulb"></span></a></li>
 			
 			<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <span class="caret"></span><span style="font-size:16px;" class="fa-pull-right hidden-xs showopacity fas fa-cog"></span></a>
-						<ul class="dropdown-menu forAnimate" role="menu">
-							<li><a href="#">Action</a></li>
-							<li><a href="#">Another action</a></li>
-							<li><a href="#">Something else here</a></li>
-							<li class="divider"></li>
-							<li><a href="#">Separated link</a></li>
-							<li class="divider"></li>
-							<li><a href="#">One more separated link</a></li>
-						</ul>
-			</li>
-			
-	
-				</ul>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings</span><span style="font-size:16px;" class="fa-pull-right hidden-xs showopacity fas fa-cog"></span></a>
 			</div>
 		</div>
 	</nav>
@@ -88,7 +75,7 @@ exec("sudo python /var/www/html/GPIO/green.py");
 }
 if (isset($_POST['OFF']))
 {
-exec("sudo python /var/www/html/GPIO/ledOFF.py");
+exec("sudo python /var/www/html/GPIO/ledOff.py");
 }
 if (isset($_POST['PURPLE']))
 {
@@ -103,19 +90,17 @@ exec("sudo python /var/www/html/GPIO/purp.py");
 
 <div align="center">
 <form method="post">
-<h3>RGB LED STRIP</h3> <button id="search" class="btn" name="RED"><h3>RED</h3></button>&nbsp;
-<h3></h3> <button id="search" class="btn" name="BLUE"><h3>BLUE</h3></button>&nbsp;
-<h3></h3> <button id="search" class="btn" name="GREEN"><h3>GREEN</h3></button>&nbsp;
-<h3></h3> <button id="search" class="btn" name="PURPLE"><h3>PURPLE</h3></button>&nbsp;
-<h3></h3> <button id="search" class="btn" name="OFF"><h3>OFF</h3></button>
+<h1>RGB LED STRIP COLOURS</h1> 
+<button id="search" class="btn0" name="RED"><i class="far fa-lightbulb fa-3x"></i></button>
+<button id="search" class="btn1" name="BLUE"><i class="far fa-lightbulb fa-3x"></i></button>
+</br> </br>
+<button id="search" class="btn2" name="GREEN"><i class="far fa-lightbulb fa-3x"></i></button>
+<button id="search" class="btn3" name="PURPLE"><i class="far fa-lightbulb fa-3x"></i></button>
+</br> </br>
+ <button id="search" class="btn4" name="OFF"><i class="fa fa-lightbulb fa-3x"></i>OFF</button>
 
 <h3>RED / GPIO 19 <br /> GREEN / GPIO 21 <br /> BLUE / GPIO 13 </h3>
-
-
-
-
 </form>
-
 
 
 </div>
@@ -130,30 +115,30 @@ exec("sudo python /var/www/html/GPIO/purp.py");
 
 
 <script>
-  function htmlbodyHeightUpdate(){
-		var height3 = $( window ).height()
-		var height1 = $('.nav').height()+50
-		height2 = $('.main').height()
-		if(height2 > height3){
-			$('html').height(Math.max(height1,height3,height2)+10);
-			$('body').height(Math.max(height1,height3,height2)+10);
-		}
-		else
-		{
-			$('html').height(Math.max(height1,height3,height2));
-			$('body').height(Math.max(height1,height3,height2));
-		}
-		
-	}
-	$(document).ready(function () {
-		htmlbodyHeightUpdate()
-		$( window ).resize(function() {
-			htmlbodyHeightUpdate()
-		});
-		$( window ).scroll(function() {
-			height2 = $('.main').height()
-  			htmlbodyHeightUpdate()
-		});
-	});
-  </script>
-
+		function htmlbodyHeightUpdate(){
+			  var height3 = $( window ).height()
+			  var height1 = $('.nav').height()+50
+			  height2 = $('.main').height()
+			  if(height2 > height3){
+				  $('html').height(Math.max(height1,height3,height2)+10);
+				  $('body').height(Math.max(height1,height3,height2)+10);
+			  }
+			  else
+			  {
+				  $('html').height(Math.max(height1,height3,height2));
+				  $('body').height(Math.max(height1,height3,height2));
+			  }
+			  
+		  }
+		  $(document).ready(function () {
+			  htmlbodyHeightUpdate()
+			  $( window ).resize(function() {
+				  htmlbodyHeightUpdate()
+			  });
+			  $( window ).scroll(function() {
+				  height2 = $('.main').height()
+					htmlbodyHeightUpdate()
+			  });
+		  });
+		</script>
+	  
